@@ -21,3 +21,23 @@ def hello(request, name):
 def cube(request, num):
     cubes = num**3
     return render(request, 'cube.html', {'num':num, 'cubes':cubes})
+
+# get 형식
+def ping(request):
+    return render(request, 'ping.html')
+    
+def pong(request):
+    print(request.GET)
+    # dict 형식이기 때문에 get
+    data = request.GET.get('data')
+    return render(request, 'pong.html', {'data':data})
+
+# post 형식
+def user_new(request):
+
+    return render(request, 'user_new.html')
+    
+def user_create(request):
+    nickname = request.POST.get('nickname')
+    password = request.POST.get('password')
+    return render(request, 'user_create.html', {'nickname':nickname, 'password':password})

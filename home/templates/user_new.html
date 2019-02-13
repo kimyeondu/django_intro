@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>user_new</title>
+</head>
+<body>
+    <form action='/home/user_create/' method="POST">
+        <!--보안때문에 token 넣음-->
+        <!--post방식은 data로-->
+        <!--setting의 middleware : 보안절차 (요청이 들어올때:위에서 아래/요청을 보낼때:아래에서 위, csrf 주석처리하면 token 없이도 됨)-->
+        {% csrf_token %}
+        <input type="text" name="nickname"/>
+        <input type="password" name="password"/>
+        <input type="submit" value="Submit"/>
+    </form>
+    
+</body>
+</html>
