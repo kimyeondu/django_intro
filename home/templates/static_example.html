@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{# extens는 무조건 맨위! #}
+
+{% load static %}
+
+{% block title %}STATIC{% endblock %}
+
+{% block css%}
+    <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css" />
+{% endblock %}
+
+{% block body %}
+    <img src="{% static '네잎클로버.jpg' %}" alt="image"></img>
+{% endblock %}
